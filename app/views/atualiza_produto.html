@@ -1,0 +1,43 @@
+{% extends "base_sistema.html" %}
+{% block subtitulo %} Alteração de Produto {% endblock%}
+    {% block conteudo %}
+    <section class="content">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-12">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Alteração de produto</h3>
+            </div><!-- /.box-header -->
+            <!-- form start -->
+            <form class="row g-3" action="{{url_for('atualiza_produto',id=prod01.id)}}" method="POST" name="dados_prod" onSubmit="return enviardados_prod();">
+              <div class="box-body">               
+                <div class="col-md-4">
+                  <label class="form-label">Nome</label>
+                  <input class="form-control" type="text" name="nome" id="nome" value="{{prod01.nome}}">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label" >Código de barras</label>
+                  <input class="form-control" type="number" name="codigo" value="{{prod01.codigo}}">
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">Quantidade</label>
+                  <input class="form-control"  type="number" name="quantidade" value = "{{prod01.quantidade}}">
+                </div>
+                <div class="col-md-12">
+                  <br>                      
+                </div>                                                         
+                <div class="col-md-12">
+                  <button class="btn btn-primary" type="submit">Alterar</button>                      
+                </div>
+                       
+            </div>
+            
+            </form>                 
+          </div><!-- /.box -->         
+        </div><!--/.col (left) -->
+        <!-- right column -->        
+      </div>   <!-- /.row -->
+    </section><!-- /.content -->
+    {% endblock %}
